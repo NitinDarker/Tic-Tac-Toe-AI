@@ -71,14 +71,42 @@ def winner(board):
     """
     Returns the winner of the game, if there is one.
     """
-    raise NotImplementedError
+    winning = [
+        [(0,0), (0,1), (0,2)],  # rows
+        [(1,0), (1,1), (1,2)],
+        [(2,0), (2,1), (2,2)],
+        [(0,0), (1,0), (2,0)],  # cols
+        [(0,1), (1,1), (2,1)],
+        [(0,2), (1,2), (2,2)],
+        [(0,0), (1,1), (2,2)],  # diagonals
+        [(0,2), (1,1), (2,0)]
+    ] # All winning positions
+    
+    for pos in winning:
+        a, b, c = pos[0], pos[1], pos[2]
+        x1, y1 = a[0], a[1]
+        x2, y2 = b[0], b[1]
+        x3, y3 = c[0], c[1]
+        if board[x1][y1] is not EMPTY and board[x1][y1] == board[x2][y2] == board[x3][y3]: 
+            return board[x1][y1]
+    return None
 
 
 def terminal(board):
     """
     Returns True if game is over, False otherwise.
     """
-    raise NotImplementedError
+    if winner(board) is not None:
+        return True
+    
+    hasEmpty = False # Does board has any empty cells?
+    for row in board:
+        if hasEmpty:
+            break
+        for cell in row:
+            if cell is EMPTY:
+                hasEmpty = True
+    return not hasEmpty
 
 
 def utility(board):
