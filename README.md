@@ -25,10 +25,10 @@ cd Tic-Tac-Toe-AI
 ```
 
 ### 2️⃣ Install dependencies
-Make sure you have Python installed. Then install Pygame:
+Make sure you have Python installed. Then install all dependencies:
 
 ```bash
-pip install pygame
+pip install -r requirements.txt
 ```
 
 **⚠️ Note:** If you don’t have pip, install it first → [pip installation guide](https://pip.pypa.io/en/stable/installation/)
@@ -89,6 +89,6 @@ pyinstaller --onefile --windowed --add-data "OpenSans-Regular.ttf:." runner.py
 
 ## Screenshots
 
-![Tic Tac Toe](landing.png)
+![Tic Tac Toe](assets/landing.png)
 
-![Tic Tac Toe](game.png)
+![Tic Tac Toe](assets/game.png)

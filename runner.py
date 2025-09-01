@@ -18,9 +18,9 @@ def resource_path(path):
         return os.path.join(sys._MEIPASS, path)
     return path
 
-mediumFont = pygame.font.Font(resource_path("OpenSans-Regular.ttf"), 28)
-largeFont = pygame.font.Font(resource_path("OpenSans-Regular.ttf"), 40)
-moveFont   = pygame.font.Font(resource_path("OpenSans-Regular.ttf"), 60)
+mediumFont = pygame.font.Font(resource_path("assets/OpenSans-Regular.ttf"), 28)
+largeFont = pygame.font.Font(resource_path("assets/OpenSans-Regular.ttf"), 40)
+moveFont   = pygame.font.Font(resource_path("assets/OpenSans-Regular.ttf"), 60)
 
 user = None
 board = ttt.initial_state()
