@@ -1,5 +1,5 @@
 import pygame 
-import sys
+import sys, os
 import time
 
 import tictactoe as ttt
@@ -13,9 +13,14 @@ white = (255, 255, 255)
 
 screen = pygame.display.set_mode(size)
 
-mediumFont = pygame.font.Font("OpenSans-Regular.ttf", 28)
-largeFont = pygame.font.Font("OpenSans-Regular.ttf", 40)
-moveFont = pygame.font.Font("OpenSans-Regular.ttf", 60)
+def resource_path(path):
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, path)
+    return path
+
+mediumFont = pygame.font.Font(resource_path("OpenSans-Regular.ttf"), 28)
+largeFont = pygame.font.Font(resource_path("OpenSans-Regular.ttf"), 40)
+moveFont   = pygame.font.Font(resource_path("OpenSans-Regular.ttf"), 60)
 
 user = None
 board = ttt.initial_state()
@@ -102,7 +107,7 @@ while True:
         elif user == player:
             title = f"Play as {user}"
         else:
-            title = f"Computer thinking..."
+            title = f"AI is thinking..."
         title = largeFont.render(title, True, white)
         titleRect = title.get_rect()
         titleRect.center = ((width / 2), 30)
