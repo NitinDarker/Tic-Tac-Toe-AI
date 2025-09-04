@@ -42,6 +42,12 @@ while True:
         titleRect = title.get_rect()
         titleRect.center = ((width / 2), 50)
         screen.blit(title, titleRect)
+        
+        # # Credits
+        # credit = mediumFont.render("by Nitin Sharma", True, white)
+        # creditRect = credit.get_rect()
+        # creditRect.center = ((width / 2), 100)  # slightly below the title
+        # screen.blit(credit, creditRect)
 
         # Draw buttons
         playXButton = pygame.Rect((width / 8), (height / 2), width / 4, 50)
@@ -148,5 +154,13 @@ while True:
                     user = None
                     board = ttt.initial_state()
                     ai_turn = False
+            
+    # Watermark
+    watermark = pygame.font.Font(resource_path("assets/OpenSans-Regular.ttf"), 14).render(
+        "Created by Nitin Sharma", True, (100, 100, 100)
+    )
+    watermarkRect = watermark.get_rect()
+    watermarkRect.bottomright = (width - 8, height - 8)  # bottom-right corner
+    screen.blit(watermark, watermarkRect)
 
     pygame.display.flip()
