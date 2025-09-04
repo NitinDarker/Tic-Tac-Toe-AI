@@ -31,60 +31,32 @@ Make sure you have Python installed. Then install all dependencies:
 pip install -r requirements.txt
 ```
 
-**⚠️ Note:** If you don’t have pip, install it first → [pip installation guide](https://pip.pypa.io/en/stable/installation/)
+>If you don’t have pip, install it first → [pip installation guide](https://pip.pypa.io/en/stable/installation/)
 
 ## Running the Game
 
-You can run the game directly with **Python** or create a standalone Executable file:
+Run directly with Python:
 
 ```bash
 python runner.py
 ```
 
-## Creating a Standalone Executable
+## Download Executable (Windows)
 
-Want a .exe (Windows) so you don’t need Python installed? Use PyInstaller:
+Don’t want to install Python? Grab the prebuilt `.exe` from the [Releases page](https://github.com/NitinDarker/Tic-Tac-Toe-AI/releases).
 
-![pygame](https://img.shields.io/badge/pyinstaller-6.15-violet)
-
-### Step 1: Install PyInstaller
-
-```bash
-pip install pyinstaller
-```
-
-### Step 2: Build the executable
-
-```bash
-# Windows
-pyinstaller --onefile --windowed --add-data "OpenSans-Regular.ttf;." runner.py
+- Download **Tic-Tac-Toe-vs-AI.exe**  
+- Double-click to play 
 
 
-# Linux / WSL / Mac
-pyinstaller --onefile --windowed --add-data "OpenSans-Regular.ttf:." runner.py
-```
-
-- --onefile → Creates a single executable.
-- --windowed → Runs without opening a console window.
-- --add-data → Includes the font file for the game.
-
-### Step 3: Run the executable
-
-- On Windows: dist/runner.exe
-- On Linux/WSL: dist/runner
 
 ## How to Play
 
 1. Launch the game.
-
 2. Choose your player: X or O.
-
 3. Click on the grid to place your move.
-
 4. The AI will play its turn automatically.
-
 5. Game ends when there’s a winner or a tie.
-
 6. Click Play Again to restart.
 
 ## Screenshots
